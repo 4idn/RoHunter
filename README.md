@@ -1,5 +1,5 @@
 # RoHunter
-Searches Roblox game for user. This was made to be a faster version of the ever so popular <a href="https://chrome.google.com/webstore/detail/rosearcher/jhamlfgelgpjgbifbpepmclhnellfoaa">RoSearcher</a> extension.
+Searches Roblox game for user. This was made to be a <b>faster</b> and more <b>stable</b> version of the ever so popular <a href="https://chrome.google.com/webstore/detail/rosearcher/jhamlfgelgpjgbifbpepmclhnellfoaa">RoSearcher</a> extension.
 
 ##### How to use
 <ul>
