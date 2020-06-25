@@ -1,5 +1,5 @@
 # RoHunter
-Searches Roblox game for user. This was made to be a <b>faster</b> and more <b>stable</b> version of the ever so popular <a href="https://chrome.google.com/webstore/detail/rosearcher/jhamlfgelgpjgbifbpepmclhnellfoaa">RoSearcher</a> extension.
+Searches Roblox game for user. This was made to be a <b>faster</b> and more <b>stable</b> version of the ever so popular <a href="https://chrome.google.com/webstore/detail/rosearcher/jhamlfgelgpjgbifbpepmclhnellfoaa">RoSearcher</a> extension. This will not work if the account you're trying to find is playing in a private server
 
 ##### How to use
 <ul>
