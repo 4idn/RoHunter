@@ -1,4 +1,8 @@
 # RoHunter
 Searches Roblox game for user
 
-pip install -r requirements.txt
+##### How to use
+<ul>
+  <li>Before running make sure to run pip install -r requirements.txt</li>
+  <li>Get your roblox security cookie and run main.py</li>
+</ul>
