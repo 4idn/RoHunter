@@ -85,12 +85,12 @@ class Size(IntEnum):
     EXTRA_LARGE = 420
     ENORMOUS = 720
 
-    def __repr__(self, dimensions: Optional[int]=2) -> str:
+    def __repr__(self, dimensions: Optional[int] = 2) -> str:
       return 'x'.join(repeat(str(self.value), dimensions))
 
 
 class Roblox(AbstractAsyncContextManager):
-    def __init__(self, session: Optional[aiohttp.ClientSession]=None):
+    def __init__(self, session: Optional[aiohttp.ClientSession] = None):
         self._session = session or aiohttp.ClientSession()
 
     @classmethod
@@ -99,12 +99,12 @@ class Roblox(AbstractAsyncContextManager):
         session = aiohttp.ClientSession(cookies={".ROBLOSECURITY": session})
         return cls(session)
 
-    async def instances(self, place: Union[int, str], index: Optional[Union[int, str]]=0) -> Optional[Instances]:
+    async def instances(self, place: Union[int, str], index: Optional[Union[int, str]] = 0) -> Optional[Instances]:
         """ Returns generator of place instances """
         async with self._session.get("https://www.roblox.com/games/getgameinstancesjson", params={"placeId": place, "startIndex": index}) as response:
             return Instances._make(itemgetter("TotalCollectionSize", "Collection")(await response.json()))
 
-    async def headshot_urls(self, *ids, size: Optional[Size]=Size.EXTRA_TINY, format: Optional[str]="png") -> Iterator[Headshot]:
+    async def headshot_urls(self, *ids, size: Optional[Size] = Size.EXTRA_TINY, format: Optional[str] = "png") -> Iterator[Headshot]:
         """ List of headshot urls """
         async with self._session.get("https://thumbnails.roblox.com/v1/users/avatar-headshot", params={"userIds": ','.join(ids), "format": format, "size": f"{size!r}"}) as response:
             return map(Headshot._make, map(itemgetter("targetId", "imageUrl"), (await response.json()).get("data", [])))
@@ -114,7 +114,7 @@ class Roblox(AbstractAsyncContextManager):
         return self._session
 
     async def close(self) -> None:
-        await self._session.close()
+        await self.session.close()
 
     async def __aexit__(self, *_) -> None:
         await self.close()
